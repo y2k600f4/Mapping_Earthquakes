@@ -109,8 +109,8 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     
 
 
-     // Creating a GeoJSON layer with the retrieved data.
-     L.geoJSON(data, {
+      // Creating a GeoJSON layer with the retrieved data.
+      L.geoJSON(data, {
         pointToLayer: (feature, latlng) => {
             console.log(data);
             return L.circleMarker(latlng);
@@ -121,11 +121,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
         onEachFeature: (feature, layer) => {
             layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
         }
-    }).addTo(earthquakes);
-
-
-    // then add earthquakes to map
-    earthquakes.addTo(map);
-
-
+    }).addTo(map);
 });
+
+
